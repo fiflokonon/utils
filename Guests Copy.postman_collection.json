@@ -1,0 +1,810 @@
+{
+	"info": {
+		"_postman_id": "ef412703-96e5-43f4-b8d0-db81f5c74ba3",
+		"name": "Guests Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17010973"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"prenoms\": \"Said\",\n    \"nom\": \"ASSOUMA\",\n    \"sexe\": \"M\",\n    \"email\": \"said@gmail.com\",\n    \"tel\": \"66231178\",\n    \"mot_de_passe\": \"Jesus\"\n}\n\n    \n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/register",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"said@gmail.com\",\n    \"mot_de_passe\": \"Jesus\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/login",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_all_users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/users",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change_User_Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/users/5/change-status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"5",
+								"change-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Users",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/users/5/delete",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"users",
+								"5",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit_Users",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"prenoms\": \"Habib\",\n        \"nom\": \"MOUSTAPHA\",\n        \"email\": \"habib@gmail.com\",\n        \"tel\": \"66231175\",\n        \"mot_de_passe\": \"Jesus\",\n        \"sexe\": \"M\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/users/6/edit",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"users",
+								"6",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_A_User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/users/6",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"users",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJwYXlwbHVzLmFmcmljYSIsImlhdCI6MTY2Mzg2NjM4NCwibmJmIjoxNjYzODY2Mzg5LCJleHAiOjE2NjM4Njk5ODQsImRhdGEiOnsiaWQiOjEsInByZW5vbXMiOiJBcm5hdWQgRmlmb25zaSIsIm5vbSI6IkxPS09OT04iLCJzZXhlIjoiTSIsImVtYWlsIjoiZmlmQGdtYWlsLmNvbSIsInRlbCI6IjY2MjMxMTcxIiwibW90X2RlX3Bhc3NlIjoiJDJ5JDEwJEpNY050S2VZWGVRajdDSmJIRGtKdWU4RzFoVWZnS2RtUzV6dC5sOHJGS2JtS1NPSFV3UVVXIiwic3RhdHV0Ijp0cnVlLCJjcmVhdGVkX2F0IjoiMjAyMi0wOS0yMiAxNzowMDo0NC43NDA2ODEifX0.yDQpzp_2WmdMolkzddqwPllUQeyi2woAEoJnSmZAISc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/users/me",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "Events_list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/events",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create_Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJwYXlwbHVzLmFmcmljYSIsImlhdCI6MTY2ODAwNTEzMCwibmJmIjoxNjY4MDA1MTM1LCJleHAiOjE2NjgwMDg3MzAsImRhdGEiOnsiaWQiOjEsInByZW5vbXMiOiJTYWlkIiwibm9tIjoiQVNTT1VNQSIsInNleGUiOiJNIiwiZW1haWwiOiJzYWlkQGdtYWlsLmNvbSIsInRlbCI6IjY2MjMxMTc4IiwibW90X2RlX3Bhc3NlIjoiJDJ5JDEwJHV2ZWh5dm91dFQ0cTR0Q2NxQk8zMU9telh6T3V6dkY0RUdTZ2tOYldKSC9sSHR5eG5ldHZHIiwic3RhdHV0IjoxLCJjcmVhdGVkX2F0IjoiMjAyMi0xMC0xMSAyMDoyNzoxNSJ9fQ.P3ZKIqlyx8zG7Av-pH44QgQSwer8NxLy4eb1E-PZYq0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titre\": \"Festi Zick\",\n    \"slogan\": \"O fait quoi today\",\n    \"description\": \"Le Chill fantome\",\n    \"lieu\": \"Sikècodji\",\n    \"date_de_debut\": \"2022-10-10\",\n    \"date_de_fin\": \"2022-10-15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/users/1/events",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"users",
+								"1",
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_User_Events_List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/users/1/events",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"users",
+								"1",
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Event",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/events/3",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"events",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Event",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/events/2",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"events",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Past-Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/past-events",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"past-events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Coming-Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/coming-events",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"coming-events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_Past_Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/users/1/past-events",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"users",
+								"1",
+								"past-events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_Coming_Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/users/1/coming-events",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"users",
+								"1",
+								"coming-events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Today_Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/today-events",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"today-events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_Today_Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/users/1/today-events",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"users",
+								"1",
+								"today-events"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Photo",
+			"item": [
+				{
+					"name": "Add_profile_photo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/fifonsi/Images/123502575_780912739423382_2875160817531380719_o.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{path}}/users/3/photos",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"users",
+								"3",
+								"photos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_user_photos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/fifonsi/Images/Capture du 2020-11-01 22-20-07.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{path}}/users/2/photos",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"users",
+								"2",
+								"photos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_user_active_photo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/users/3/active-photo",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"users",
+								"3",
+								"active-photo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_All_Photos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/photos",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"photos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_A_photo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/photos/13",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"photos",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_photo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/photos/6",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"photos",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Invitation",
+			"item": [
+				{
+					"name": "Get_All_Invitations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{path}}/invitations-list",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"invitations-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create_Invitation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nom_prenoms\": \"Yves SE\",\n    \"place\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/events/1/invitations",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"events",
+								"1",
+								"invitations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Invitation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/invitations/1",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"invitations",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Event_Invitations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/events/1/invitations",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"events",
+								"1",
+								"invitations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Invitation",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/invitations/1",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"invitations",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Files",
+			"item": [
+				{
+					"name": "Get_Files",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/files",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add_File",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/fifonsi/Images/Permis.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{path}}/events/1/files",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"events",
+								"1",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Event_Files",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/events/1/files",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"events",
+								"1",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_File",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/files/2",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"files",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_File",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/files/1",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"files",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "path",
+			"value": "http://first.banjoocash.com/api",
+			"type": "string"
+		}
+	]
+}

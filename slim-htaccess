@@ -1,0 +1,9 @@
+/pubic/.htaccess
+#https://stackoverflow.com/questions/26256730/slimframework-request-headers-don%C2%B4t-read-authorization
+# Redirect to front controller
+RewriteEngine On
+# RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]
+SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1

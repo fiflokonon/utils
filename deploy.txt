@@ -1,0 +1,68 @@
+>ssh username@ip_address
+ -password:
+
+**********Clone**********
+>cd www/
+>git clone https:----
+>mv oldName newName(Optional)
+>cd projectName(newName)
+>composer install
+>sudo apt-get install composer(If composer is not installed)
+>composer update(Optional)
+>npm install(Optional)
+
+********ENV VARIABLES********
+>mv .env.example .env
+>vi .env 
+	-Tap I
+	-Insert DB_NAME
+    -If need username change
+    -If need password change
+    -If need some env variables change
+    -Tap Echap
+    -Tap :wq or :x
+  
+
+*******DATABASE CONFIGURATION*******
+>mysql -u username -p
+  -password
+     OR
+>mysql -u root -p
+  -password(default=root)
+  
+mysql>Create database DB_NAME ;
+mysql>exit
+
+***********MIGRATIONS***********
+>php artisan migrate
+>php artisan route:list
+>php artisan storage:link
+>php artisan key:generate
+>php artisan optimize
+
+****************VIRTUAL HOST CONFIGURATION**********
+>pwd to get absolute path
+	-copy it
+>cd /etc/apache2/sites-available/
+>ls 
+>sudo cp -r oldDomainName.conf newDomainName.conf
+>sudo vi newDomainName.conf
+	-Tap I
+	-Change serverName to new Servername with same root(radical)
+	-Change ServerAlias to new Servername without www.
+	-Change DocumentRoot to project absolute path+public
+	-Let first Directory tag
+	-Change second Directory tag content to project absolute path+public
+	-Change ErrorLog to error.ServerAlias.log
+	-Change CustomLog to access.ServerAlias.log ##
+	-Tap Echap
+	-Tap :wq or :x
+>sudo a2ensite newDomainName.conf
+>sudo systemctl reload apache2 (restart apache2)
+
+*************GIVING EXEC PERMISSIONS**********
+>cd www/(If exist)
+>sudo chmod -R 777 projectName/
+>sudo systemctl reload apache2
+
+

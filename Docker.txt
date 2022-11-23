@@ -1,0 +1,3 @@
+https://askubuntu.com/questions/935569/how-to-completely-uninstall-docker
+
+https://cloudcone.com/docs/article/how-to-install-docker-on-ubuntu-22-04-20-04/

@@ -1,0 +1,4 @@
+sudo adduser user1
+su - user1
+sudo apt update
+sudo usermod -a -G sudo user1

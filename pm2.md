@@ -1,6 +1,5 @@
-Il semble que le problème que vous rencontrez soit lié à la nécessité de garder la commande `laravel-echo-server start` active en permanence pour que la diffusion des événements sur le serveur de sockets fonctionne. En production, vous voudrez que cette fonctionnalité fonctionne de manière autonome, sans avoir à garder une fenêtre de terminal ouverte en permanence.
 
-Pour résoudre ce problème, vous pouvez utiliser un gestionnaire de processus comme PM2 (Process Manager 2) pour exécuter Laravel Echo Server en tant que service en arrière-plan. PM2 est un outil de gestion de processus pour les applications Node.js qui offre des fonctionnalités de démon, de redémarrage automatique et de gestion des journaux.
+Utiliser un gestionnaire de processus comme PM2 (Process Manager 2) pour exécuter Laravel Echo Server en tant que service en arrière-plan. PM2 est un outil de gestion de processus pour les applications Node.js qui offre des fonctionnalités de démon, de redémarrage automatique et de gestion des journaux.
 
 Voici comment vous pourriez utiliser PM2 pour exécuter Laravel Echo Server en production :
 

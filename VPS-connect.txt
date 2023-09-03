@@ -1,0 +1,17 @@
+Paramètres d'accès:
+
+Le nom de votre VPS est: vps-89e738c3.vps.ovh.net
+
+  - adresse IPv4: 79.137.38.71
+  - adresse IPv6: 2001:41d0:401:3000::62af
+  - nom d'utilisateur: debian
+  - mot de passe : vapN75Y2G5Rk
+
+
+
+
+
+
+
+
+
